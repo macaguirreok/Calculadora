@@ -20,7 +20,126 @@ const btnMultiplicar = document.getElementById("multiplicacion");
 
 const btnIgual = document.getElementById("igual");
 
-//* Eventos de los botones
+const btnInverso = document.getElementById("inverso");
 
-// Sumar
+const btnPotencia = document.getElementById("potencia");
+
+const btnRaiz = document.getElementById("raiz");
+
+
+let primerNumero;
+let segundoNumero;
+let operacion;
+
+// btn suma
+
+btnSumar.addEventListener("click", function(){
+    primerNumero = Number(inputUno.value);
+    operacion ="+";
+    console.log(primerNumero);
+    console.log(operacion);
+    inputUno.value = "";
+
+
+});
+
+
+
+  btnIgual.addEventListener("click", function () {
+
+  segundoNumero = Number(inputUno.value);
+
+  if (operacion === "+") {
+
+    const resultado = primerNumero + segundoNumero;
+
+    rest.textContent = resultado;
+
+  }
+
+});
+
+btnDividir.addEventListener("click", function () {
+
+    primerNumero = Number(inputUno.value);
+    operacion ="/";
+    console.log(primerNumero);
+    console.log(operacion);
+    inputUno.value ="";
+
+
+});
+
+
+btnIgual.addEventListener("click", function () {
+
+  segundoNumero = Number(inputUno.value);
+
+  if (operacion === "/") {
+
+    const resultado = primerNumero / segundoNumero;
+
+    rest.textContent = resultado;
+
+  }
+
+});
+
+
+btnRestar.addEventListener("click", function () {
+
+    primerNumero = Number(inputUno.value);
+    operacion ="-";
+    console.log(primerNumero);
+    console.log(operacion);
+    inputUno.value ="";
+
+
+});
+
+
+btnIgual.addEventListener("click", function () {
+
+  segundoNumero = Number(inputUno.value);
+
+  if (operacion === "-") {
+
+    const resultado = primerNumero - segundoNumero;
+
+    rest.textContent = resultado;
+
+  }
+
+});
+
+
+btnInverso.addEventListener("click", function(){
+
+    let numero1 = Number(inputUno.value);
+
+    let resultado = 1 / numero1;
+
+    rest.textContent = resultado;
+});
+
+btnPotencia.addEventListener("click", function(){
+
+    let numero1 = Number(inputUno.value);
+
+    let resultado =  numero1 * numero1;
+
+    rest.textContent = resultado;
+
+});
+
+btnRaiz.addEventListener("click", function(){
+
+    let numero1 = Number(inputUno.value);
+
+    let resultado = Math.sqrt(numero1);
+
+    rest.textContent = resultado;
+
+});
+
 
