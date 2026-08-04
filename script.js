@@ -26,10 +26,39 @@ const btnPotencia = document.getElementById("potencia");
 
 const btnRaiz = document.getElementById("raiz");
 
+const btnBorrar = document.getElementById("borrar");
+
+const btnComa = document.getElementById("coma");
+
 
 let primerNumero;
 let segundoNumero;
 let operacion;
+
+// btn borrar
+
+btnBorrar.addEventListener("click" , function(){
+  
+  inputUno.value = "";
+});
+
+//! btn coma - hacer
+
+//! btn -/+ - hacer
+
+//! btn C - hacer
+
+//! btn CE - hacer
+
+//! btn % - hacer
+
+//! FALTA: que se escriban tantos n° como botones de n° se toquen
+
+//! FALTA: que se puedan sumar varios numeros y no solo de a dos
+
+//! FALTA: que revise como hacer con los demas botones, no solo suma
+
+//! FALTA: que me fije que otras restricciones faltan
 
 // btn suma
 
@@ -52,7 +81,7 @@ btnMultiplicar.addEventListener("click", function(){
 
 });
 
-
+  //btn igual
 
   btnIgual.addEventListener("click", function () {
 
