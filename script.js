@@ -4,10 +4,6 @@
 const inputUno = document.getElementById("numero1");
 
 
-// Llama h3 resultado
-
-const rest = document.getElementById("Resultado");
-
 // llamo a los botones
 
 const btnSumar = document.getElementById("suma");
@@ -26,39 +22,87 @@ const btnPotencia = document.getElementById("potencia");
 
 const btnRaiz = document.getElementById("raiz");
 
-const btnBorrar = document.getElementById("borrar");
+const btnCE = document.getElementById("CE");
+
+const btnC = document.getElementById("C");
 
 const btnComa = document.getElementById("coma");
 
+const btnCambiarSigno = document.getElementById("cambiarSigno");
+
+const btnBorrar = document.getElementById("borrar");
+
+const btnPorcentaje = document.getElementById("porcentaje");
+
+//! Faltan operaciones encadenadas
 
 let primerNumero;
 let segundoNumero;
 let operacion;
 
-// btn borrar
+// btn %
 
-btnBorrar.addEventListener("click" , function(){
+btnPorcentaje.addEventListener("click" , function(){
+
+  let numero = Number(inputUno.value);
+
+  let resultado = numero / 100 ;
+
+  inputUno.value = resultado;
+
+});
+
+
+// btn C : borra todo
+
+btnC.addEventListener("click", function(){
+  
+  inputUno.value = "";
+  primerNumero = undefined;
+  segundoNumero = undefined;
+  operacion = undefined;
+
+  inputUno.value ="0";
+
+});
+
+
+// btn CE: borra solo las entradas
+
+btnCE.addEventListener("click" , function(){
   
   inputUno.value = "";
 });
 
-//! btn coma - hacer
+// btn coma
 
-//! btn -/+ - hacer
+btnComa.addEventListener("click" , function(){
 
-//! btn C - hacer
+if(!inputUno.value.includes(".")){
+  inputUno.value += ".";
+}
+ 
+});
 
-//! btn CE - hacer
+// btn borrar: borrar de a un caracter
+//texto.slice(inicio, final)
 
-//! btn % - hacer
+btnBorrar.addEventListener("click", function(){
 
-//! FALTA: que se escriban tantos n° como botones de n° se toquen
+  inputUno.value = inputUno.value.slice(0, -1);
 
-//! FALTA: que se puedan sumar varios numeros y no solo de a dos
+});
 
-//! FALTA: que revise como hacer con los demas botones, no solo suma
 
-//! FALTA: que me fije que otras restricciones faltan
+
+//btn cambiar signo
+
+btnCambiarSigno.addEventListener("click", function () {
+
+    inputUno.value = Number(inputUno.value) * -1;
+
+});
+
 
 // btn suma
 
@@ -197,7 +241,7 @@ const btnSiete = document.getElementById("siete");
 
 btnSiete.addEventListener("click" , function(){
 
-  inputUno.value = "7";
+  inputUno.value += "7";
 });
 
 
@@ -205,7 +249,7 @@ const btnOcho = document.getElementById("ocho");
 
 btnOcho.addEventListener("click" , function(){
 
-  inputUno.value = "8";
+  inputUno.value += "8";
 });
 
 
@@ -214,7 +258,7 @@ const btnNueve = document.getElementById("nueve");
 
 btnNueve.addEventListener("click" , function(){
 
-  inputUno.value = "9";
+  inputUno.value += "9";
 });
 
 
@@ -223,7 +267,7 @@ const btnCuatro = document.getElementById("cuatro");
 
 btnCuatro.addEventListener("click" , function(){
 
-  inputUno.value = "4";
+  inputUno.value += "4";
 });
 
 
@@ -232,7 +276,7 @@ const btnCinco = document.getElementById("cinco");
 
 btnCinco.addEventListener("click" , function(){
 
-  inputUno.value = "5";
+  inputUno.value += "5";
 });
 
 
@@ -241,7 +285,7 @@ const btnSeis = document.getElementById("seis");
 
 btnSeis.addEventListener("click" , function(){
 
-  inputUno.value = "6";
+  inputUno.value += "6";
 });
 
 
@@ -250,7 +294,7 @@ const btnUno = document.getElementById("uno");
 
 btnUno.addEventListener("click" , function(){
 
-  inputUno.value = "1";
+  inputUno.value += "1";
 });
 
 
@@ -259,7 +303,7 @@ const btnDos = document.getElementById("dos");
 
 btnDos.addEventListener("click" , function(){
 
-  inputUno.value = "2";
+  inputUno.value += "2";
 });
 
 
@@ -268,6 +312,16 @@ const btnTres = document.getElementById("tres");
 
 btnTres.addEventListener("click" , function(){
 
-  inputUno.value = "3";
+  inputUno.value += "3";
 });
+
+
+
+const btnCero = document.getElementById("cero");
+
+btnCero.addEventListener("click" , function(){
+
+  inputUno.value += "0";
+});
+
 

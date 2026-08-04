@@ -1,5 +1,28 @@
 * {
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Activamos el flex en el body */
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 7%;
+
+    background: #1e1e1e;
+}
+
+/* Contenedor principal */
+
+#divCalculadora{
+    background-color: #2b2b2b;
+    padding: 25px;
+    width: 400px;
+    border-radius: 25px;
+    box-shadow: 
+    0px 20px 40px rgba(0,0,0,0.5);
 }
 
 #divUno{
@@ -10,8 +33,19 @@
 #numero1{
     width: 100%;
     height: 50px;
-    color: brown;
+    background-color: #111;
+    color: white;
+    font-size: 35px;
+
+    text-align: right;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
     border: none;
+
+    outline: none;
 }
 
 #divResultado{
@@ -19,13 +53,7 @@
     justify-content: center;
 }
 
-/* Activamos el flex en el body */
 
-body{
-    display: flex;
-    justify-content: center;
-    padding: 7%;
-}
 
 /* Al ponerle grid a este div, se convirtió en una cuadricula,
  ya no es un div normal*/
@@ -34,30 +62,91 @@ body{
     padding: 5%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap:10px;
+    gap:12px;
 }
 
-#divCalculadora{
-    background-color: antiquewhite;
-    width: 400px;
-    border-radius: 10%;
-}
 
 button{
-    background-color: rgb(237, 213, 96);
-    padding: 30%;
+     height: 65px;
+
+    border-radius: 15px;
+
     border: none;
-    border-radius: 25%;
-    color: brown;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+
+    background-color: #3a3a3a;
+
+    color: white;
+
+
+    transition: 
+    transform 0.1s,
+    background-color 0.2s;
     
 }
 
 button:hover {
-    background-color: #febf2c;
+    background-color:#555;
     cursor: pointer;
 }
 
-#Resultado{
-    color: brown;
+button:active {
+
+    transform: scale(0.92);
+
 }
 
+
+/* Operadores */
+
+#suma,
+#resta,
+#multiplicacion,
+#division,
+#igual {
+
+
+    background-color: #ff9500;
+
+    color:white;
+
+}
+
+
+#suma:hover,
+#resta:hover,
+#multiplicacion:hover,
+#division:hover,
+#igual:hover {
+
+    background-color: #ffb340;
+
+}
+
+
+/* Botones especiales */
+
+#C,
+#CE,
+#borrar,
+#porcentaje {
+
+    background-color: #666;
+
+}
+
+
+#C:hover,
+#CE:hover,
+#borrar:hover,
+#porcentaje:hover {
+
+    background-color: #888;
+
+}
