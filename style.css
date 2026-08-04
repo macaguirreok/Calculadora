@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+}
+
+#divUno{
+    margin: 10%;
+}
+
+#numero1{
+    width: 100%;
+    height: 50px;
+    color: brown;
+    border: none;
+}
+
+#divResultado{
+    display: flex;
+    justify-content: center;
+}
+
+/* Activamos el flex en el body */
+
+body{
+    display: flex;
+    justify-content: center;
+    padding: 7%;
+}
+
+/* Al ponerle grid a este div, se convirtió en una cuadricula,
+ ya no es un div normal*/
+
+#botones{
+    padding: 5%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap:10px;
+}
+
+#divCalculadora{
+    background-color: antiquewhite;
+    width: 400px;
+    border-radius: 10%;
+}
+
+button{
+    background-color: rgb(237, 213, 96);
+    padding: 30%;
+    border: none;
+    border-radius: 25%;
+    color: brown;
+}
+
+#Resultado{
+    color: brown;
+}
+

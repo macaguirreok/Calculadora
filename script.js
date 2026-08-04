@@ -43,15 +43,32 @@ btnSumar.addEventListener("click", function(){
 
 });
 
+btnMultiplicar.addEventListener("click", function(){
+    primerNumero = Number(inputUno.value);
+    operacion ="mult";
+    console.log(primerNumero);
+    console.log(operacion);
+    inputUno.value = "";
+
+});
+
 
 
   btnIgual.addEventListener("click", function () {
 
-  segundoNumero = Number(inputUno.value);
+   segundoNumero = Number(inputUno.value);
 
   if (operacion === "+") {
 
     const resultado = primerNumero + segundoNumero;
+
+    rest.textContent = resultado;
+
+  }
+
+  if (operacion === "mult") {
+
+    const resultado = primerNumero * segundoNumero;
 
     rest.textContent = resultado;
 
