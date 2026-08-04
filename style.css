@@ -6,6 +6,7 @@
     margin: 10%;
 }
 
+
 #numero1{
     width: 100%;
     height: 50px;
@@ -48,6 +49,12 @@ button{
     border: none;
     border-radius: 25%;
     color: brown;
+    
+}
+
+button:hover {
+    background-color: #febf2c;
+    cursor: pointer;
 }
 
 #Resultado{

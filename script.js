@@ -62,7 +62,7 @@ btnMultiplicar.addEventListener("click", function(){
 
     const resultado = primerNumero + segundoNumero;
 
-    rest.textContent = resultado;
+    inputUno.value = resultado;
 
   }
 
@@ -70,7 +70,7 @@ btnMultiplicar.addEventListener("click", function(){
 
     const resultado = primerNumero * segundoNumero;
 
-    rest.textContent = resultado;
+    inputUno.value = resultado;
 
   }
 
@@ -96,7 +96,7 @@ btnIgual.addEventListener("click", function () {
 
     const resultado = primerNumero / segundoNumero;
 
-    rest.textContent = resultado;
+    inputUno.value = resultado;
 
   }
 
@@ -123,7 +123,7 @@ btnIgual.addEventListener("click", function () {
 
     const resultado = primerNumero - segundoNumero;
 
-    rest.textContent = resultado;
+    inputUno.value = resultado;
 
   }
 
@@ -136,7 +136,7 @@ btnInverso.addEventListener("click", function(){
 
     let resultado = 1 / numero1;
 
-    rest.textContent = resultado;
+    inputUno.value = resultado;
 });
 
 btnPotencia.addEventListener("click", function(){
@@ -145,7 +145,7 @@ btnPotencia.addEventListener("click", function(){
 
     let resultado =  numero1 * numero1;
 
-    rest.textContent = resultado;
+    inputUno.value = resultado;
 
 });
 
@@ -155,8 +155,90 @@ btnRaiz.addEventListener("click", function(){
 
     let resultado = Math.sqrt(numero1);
 
-    rest.textContent = resultado;
+    inputUno.value = resultado;
 
 });
 
+
+//-----------------------//
+// Botones de los números//
+//-----------------------//
+
+const btnSiete = document.getElementById("siete");
+
+btnSiete.addEventListener("click" , function(){
+
+  inputUno.value = "7";
+});
+
+
+const btnOcho = document.getElementById("ocho");
+
+btnOcho.addEventListener("click" , function(){
+
+  inputUno.value = "8";
+});
+
+
+
+const btnNueve = document.getElementById("nueve");
+
+btnNueve.addEventListener("click" , function(){
+
+  inputUno.value = "9";
+});
+
+
+
+const btnCuatro = document.getElementById("cuatro");
+
+btnCuatro.addEventListener("click" , function(){
+
+  inputUno.value = "4";
+});
+
+
+
+const btnCinco = document.getElementById("cinco");
+
+btnCinco.addEventListener("click" , function(){
+
+  inputUno.value = "5";
+});
+
+
+
+const btnSeis = document.getElementById("seis");
+
+btnSeis.addEventListener("click" , function(){
+
+  inputUno.value = "6";
+});
+
+
+
+const btnUno = document.getElementById("uno");
+
+btnUno.addEventListener("click" , function(){
+
+  inputUno.value = "1";
+});
+
+
+
+const btnDos = document.getElementById("dos");
+
+btnDos.addEventListener("click" , function(){
+
+  inputUno.value = "2";
+});
+
+
+
+const btnTres = document.getElementById("tres");
+
+btnTres.addEventListener("click" , function(){
+
+  inputUno.value = "3";
+});
 
