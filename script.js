@@ -128,9 +128,14 @@ btnBorrar.addEventListener("click", function(){
 
   inputUno.value = inputUno.value.slice(0, -1);
 
+
+  if(inputUno.value === ""){
+
+    inputUno.value = "0";
+
+  }
+
 });
-
-
 
 
 // btn suma
@@ -264,6 +269,7 @@ let resultado = eval(cuenta);
 inputUno.value = resultado * -1;
 
 });
+
 
 
 //-----------------------//
