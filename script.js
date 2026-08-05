@@ -34,11 +34,37 @@ const btnBorrar = document.getElementById("borrar");
 
 const btnPorcentaje = document.getElementById("porcentaje");
 
-//! Faltan operaciones encadenadas
 
-let primerNumero;
-let segundoNumero;
-let operacion;
+
+// función para que no se dupliquen los operadores
+
+function agregarOperacion(operador){
+
+  let ultimoCaracter = inputUno.value.slice(-1);
+
+
+  /* El return corta la ejecución:
+  Si el contenido del input es 0, salí de la función y no ejecutes
+  nada más (no llega a agregar el "+" por ejemplo) */
+  if(inputUno.value === "0"){
+      return;
+  }
+
+
+  if(ultimoCaracter === "+" || 
+     ultimoCaracter === "-" || 
+     ultimoCaracter === "*" || 
+     ultimoCaracter === "/"){
+
+      //salgo de la función y no hacemos nada:
+      return;
+
+  }
+
+
+  inputUno.value += operador;
+
+}
 
 // btn %
 
@@ -56,11 +82,6 @@ btnPorcentaje.addEventListener("click" , function(){
 // btn C : borra todo
 
 btnC.addEventListener("click", function(){
-  
-  inputUno.value = "";
-  primerNumero = undefined;
-  segundoNumero = undefined;
-  operacion = undefined;
 
   inputUno.value ="0";
 
@@ -71,17 +92,33 @@ btnC.addEventListener("click", function(){
 
 btnCE.addEventListener("click" , function(){
   
-  inputUno.value = "";
+   inputUno.value = "0";
 });
 
 // btn coma
 
 btnComa.addEventListener("click" , function(){
 
-if(!inputUno.value.includes(".")){
+let cuenta = inputUno.value;
+
+if(cuenta === ""){
+
+ inputUno.value = "0.";
+
+ return;
+
+}
+
+//numeros se convierte en un array
+let numeros = cuenta.split(/[+\-*/]/); 
+
+// "ultimoNumero = dame el numero de la última posición del array, por eso menos uno"
+let ultimoNumero = numeros[numeros.length - 1 ];
+
+if(!ultimoNumero.includes(".")){
   inputUno.value += ".";
 }
- 
+
 });
 
 // btn borrar: borrar de a un caracter
@@ -95,140 +132,136 @@ btnBorrar.addEventListener("click", function(){
 
 
 
-//btn cambiar signo
-
-btnCambiarSigno.addEventListener("click", function () {
-
-    inputUno.value = Number(inputUno.value) * -1;
-
-});
-
 
 // btn suma
 
 btnSumar.addEventListener("click", function(){
-    primerNumero = Number(inputUno.value);
-    operacion ="+";
-    console.log(primerNumero);
-    console.log(operacion);
-    inputUno.value = "";
+    
+    agregarOperacion("+");
 
 
 });
+
+// btn multiplicar
 
 btnMultiplicar.addEventListener("click", function(){
-    primerNumero = Number(inputUno.value);
-    operacion ="mult";
-    console.log(primerNumero);
-    console.log(operacion);
-    inputUno.value = "";
+    
+    agregarOperacion("*");
 
 });
 
-  //btn igual
+  //*btn igual
 
-  btnIgual.addEventListener("click", function () {
+  btnIgual.addEventListener("click" , function(){
 
-   segundoNumero = Number(inputUno.value);
+    //guarda en la variable cuenta, la cuenta completa de 8+8-9 ejemplo
 
-  if (operacion === "+") {
+    let cuenta = inputUno.value;
 
-    const resultado = primerNumero + segundoNumero;
+    try{
 
-    inputUno.value = resultado;
+      let resultado = eval(cuenta);
 
-  }
+      inputUno.value = resultado;
 
-  if (operacion === "mult") {
+    }
+    catch(error){
 
-    const resultado = primerNumero * segundoNumero;
+      inputUno.value = "Error";
 
-    inputUno.value = resultado;
+    }
 
-  }
+  });
 
-});
+  
+
+
+//* btn dividir
 
 btnDividir.addEventListener("click", function () {
 
-    primerNumero = Number(inputUno.value);
-    operacion ="/";
-    console.log(primerNumero);
-    console.log(operacion);
-    inputUno.value ="";
+  
+   agregarOperacion("/");
 
 
 });
 
-
-btnIgual.addEventListener("click", function () {
-
-  segundoNumero = Number(inputUno.value);
-
-  if (operacion === "/") {
-
-    const resultado = primerNumero / segundoNumero;
-
-    inputUno.value = resultado;
-
-  }
-
-});
-
+//* btn restar
 
 btnRestar.addEventListener("click", function () {
 
-    primerNumero = Number(inputUno.value);
-    operacion ="-";
-    console.log(primerNumero);
-    console.log(operacion);
-    inputUno.value ="";
+    
+   agregarOperacion("-");
 
 
 });
 
 
-btnIgual.addEventListener("click", function () {
+//* btn potencia
 
-  segundoNumero = Number(inputUno.value);
+btnPotencia.addEventListener("click",function(){
 
-  if (operacion === "-") {
+let cuenta = inputUno.value;
 
-    const resultado = primerNumero - segundoNumero;
+let resultado = eval(cuenta);
 
-    inputUno.value = resultado;
-
-  }
+inputUno.value = resultado * resultado;
 
 });
 
+//* btn raiz
 
-btnInverso.addEventListener("click", function(){
+btnRaiz.addEventListener("click",function(){
 
-    let numero1 = Number(inputUno.value);
+let cuenta = inputUno.value;
 
-    let resultado = 1 / numero1;
+let resultado = eval(cuenta);
 
-    inputUno.value = resultado;
+
+if(resultado < 0){
+
+ inputUno.value = "Error";
+
+}else{
+
+ inputUno.value = Math.sqrt(resultado);
+
+}
+
 });
 
-btnPotencia.addEventListener("click", function(){
+//* btn inverso
 
-    let numero1 = Number(inputUno.value);
+btnInverso.addEventListener("click",function(){
 
-    let resultado =  numero1 * numero1;
+let cuenta = inputUno.value;
 
-    inputUno.value = resultado;
+let resultado = eval(cuenta);
+
+
+if(resultado === 0){
+
+ inputUno.value = "Error";
+
+ return;
+
+}
+
+
+inputUno.value = 1 / resultado;
+
 
 });
 
-btnRaiz.addEventListener("click", function(){
+//* btn cambiarSigno
 
-    let numero1 = Number(inputUno.value);
+btnCambiarSigno.addEventListener("click" , function(){
 
-    let resultado = Math.sqrt(numero1);
+let cuenta = inputUno.value;
 
-    inputUno.value = resultado;
+let resultado = eval(cuenta);
+
+inputUno.value = resultado * -1;
 
 });
 
